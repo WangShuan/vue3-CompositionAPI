@@ -1,6 +1,4 @@
-# Vue 開發上的10個小細節
-
-## 1. Composition API
+# Composition API
 
 Composition API 是 vue3 開發出來的另外一種撰寫方法。
 
@@ -13,7 +11,7 @@ Composition API 是 vue3 開發出來的另外一種撰寫方法。
 
 ---
 
-撰寫方式如下：
+## 1. 撰寫方式
 
 創建一個 `html` 檔 並使用 `CDN` 引入 `vue3`
 
