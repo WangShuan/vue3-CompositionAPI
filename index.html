@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Vue3</title>
+</head>
+
+<body>
+  <div id="app">
+    <input type="text" v-model="text">
+    <button @click="changeText">change</button>
+
+    <h2>{{text}}</h2>
+    <span>{{data.x}}</span>,
+    <span>{{data.y}}</span>
+  </div>
+  <script src="https://unpkg.com/vue@next"></script>
+  <script>
+    const {
+      ref,
+      reactive,
+      watch
+    } = Vue
+    const app = {
+      setup() {
+        const text = ref('Hello World')
+        const data = reactive({
+          x: 0,
+          y: 100
+        })
+        const isShow = ref(false)
+        const changeText = () => {
+          text.value = 'Hello Vue';
+          data.x = 100;
+          data.y = 0;
+          isShow.value = !isShow.value
+          formData.age = 20
+        }
+
+        watch(isShow, (newV, oldV) => {
+          console.log(newV, oldV);
+        })
+
+        const formData = reactive({
+          name: '',
+          age: 10
+        })
+
+        watch(() => formData.age, (newV, oldV) => {
+          console.log(newV, oldV)
+        })
+
+        return {
+          text,
+          data,
+          changeText
+        }
+      }
+    }
+
+    Vue.createApp(app).mount('#app')
+
+  </script>
+</body>
+
+</html>
